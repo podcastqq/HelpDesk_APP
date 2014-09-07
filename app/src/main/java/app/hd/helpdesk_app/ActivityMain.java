@@ -1,17 +1,48 @@
 package app.hd.helpdesk_app;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class ActivityMain extends Activity {
 
+    Button btnViewUsers;
+    Button btnCreateUser;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //buttons
+        btnViewUsers = (Button) findViewById(R.id.btnViewUsers);
+        btnCreateUser = (Button) findViewById(R.id.btnCreateUser);
+
+        //view users click event
+        btnViewUsers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //lauch all users activity
+                Intent i = new Intent(getApplicationContext(), AllUsersActivity.class);
+                startActivity(i);
+            }
+        });
+
+        //create new user click event
+        btnCreateUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //launch create new user activity
+                Intent i = new Intent(getApplicationContext(), crtNewUserActivity.class);
+                startActivity(i);
+            }
+
+        });
     }
 
 

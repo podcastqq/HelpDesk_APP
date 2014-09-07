@@ -4,5 +4,17 @@
     <string name="app_name">HelpDesk_APP</string>
     <string name="hello_world">Hello world!!!!!!</string>
     <string name="action_settings">Settings</string>
+    <string name="all_users">All Users</string>
+    <string name="new_user">Add new user</string>
+    <string name="edit_user">Edit user</string>
+    <string name="view_all_users">View All Users</string>
+    <string name="add_new_users">Add New Users</string>
+    <string name="loading_users">Loading user list. Please wait...</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="username">Username</string>
+    <string name="pass">Password</string>
+    <string name="retype_pass">Retype Password</string>
+    <string name="create_user">Create User</string>
 
 </resources>
