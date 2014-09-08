@@ -12,7 +12,7 @@
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
-        android:textSize="17dip"/>
+        android:textSize="17sp"/>
 
     <!-- Input Name -->
     <EditText android:id="@+id/inputName"
@@ -20,7 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dip"
         android:layout_marginBottom="15dip"
-        android:singleLine="true"/>
+        android:singleLine="true"
+        android:inputType="text" />
 
     <!-- Surname Label -->
     <TextView android:layout_width="fill_parent"
@@ -29,7 +30,7 @@
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
-        android:textSize="17dip"/>
+        android:textSize="17sp"/>
 
     <!-- Input Surname -->
     <EditText android:id="@+id/inputSurname"
@@ -47,7 +48,7 @@
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
-        android:textSize="17dip"/>
+        android:textSize="17sp"/>
 
     <!-- Input Username -->
     <EditText android:id="@+id/inputUsername"
@@ -56,7 +57,8 @@
         android:layout_margin="5dip"
         android:layout_marginBottom="15dip"
         android:lines="4"
-        android:gravity="top"/>
+        android:gravity="top"
+        android:inputType="text" />
 
     <!-- Password Label -->
     <TextView android:layout_width="fill_parent"
@@ -65,7 +67,7 @@
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
-        android:textSize="17dip"/>
+        android:textSize="17sp"/>
 
     <!-- Input Password -->
     <EditText android:id="@+id/inputPass"
@@ -84,7 +86,7 @@
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
-        android:textSize="17dip"/>
+        android:textSize="17sp"/>
 
     <!-- Input Retype Password -->
     <EditText android:id="@+id/inputRetypePass"

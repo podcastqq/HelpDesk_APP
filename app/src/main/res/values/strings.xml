@@ -10,11 +10,15 @@
     <string name="view_all_users">View All Users</string>
     <string name="add_new_users">Add New Users</string>
     <string name="loading_users">Loading user list. Please wait...</string>
+    <string name="creating_user">Creating User</string>
     <string name="name">Name</string>
     <string name="surname">Surname</string>
     <string name="username">Username</string>
     <string name="pass">Password</string>
     <string name="retype_pass">Retype Password</string>
     <string name="create_user">Create User</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="delete_user">Delete User</string>
+    <string name="pass_not_match">Password didn't match</string>
 
 </resources>

@@ -37,7 +37,7 @@ public class AllUsersActivity extends ListActivity {
     ArrayList<HashMap<String, String>> usersList;
 
     // url to get all products list
-    private static String url_all_products = "http://localhost/helpdesk/get_all_users.php";
+    private static String url_all_users = "http://localhost/helpdesk/get_all_users.php";
 
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
@@ -127,7 +127,7 @@ public class AllUsersActivity extends ListActivity {
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             // getting JSON string from URL
-            JSONObject json = jParser.makeHttpRequest(url_all_products, "GET", params);
+            JSONObject json = jParser.makeHttpRequest(url_all_users, "GET", params);
 
             // Check your log cat for JSON reponse
             Log.d("All Products: ", json.toString());

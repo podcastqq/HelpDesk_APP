@@ -56,7 +56,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dip"
         android:layout_marginBottom="15dip"
-        android:lines="4"
         android:gravity="top"
         android:inputType="text" />
 
@@ -75,33 +74,25 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dip"
         android:layout_marginBottom="15dip"
-        android:lines="4"
         android:gravity="top"
-        android:inputType="textPassword" />
+        android:inputType="text" />
 
-    <!-- Retype Password Label -->
-    <TextView android:layout_width="fill_parent"
+    <LinearLayout android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/retype_pass"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip"
-        android:textSize="17sp"/>
+        android:orientation="horizontal">
+        <!-- Button Save changes -->
+        <Button android:id="@+id/btnSave"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save_changes"
+            android:layout_weight="1"/>
 
-    <!-- Input Retype Password -->
-    <EditText android:id="@+id/inputRetypePass"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dip"
-        android:layout_marginBottom="15dip"
-        android:lines="4"
-        android:gravity="top"
-        android:inputType="textPassword" />
-
-    <!-- Button Create Product -->
-    <Button android:id="@+id/btnCreateProduct"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/create_user"/>
+        <!-- Button Delete User -->
+        <Button android:id="@+id/btnDelete"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/delete_user"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
 </LinearLayout>
