@@ -37,7 +37,7 @@ public class AllUsersActivity extends ListActivity {
     ArrayList<HashMap<String, String>> usersList;
 
     // url to get all products list
-    private static String url_all_users = "http://localhost/helpdesk/get_all_users.php";
+    private  String url_all_users = getString(R.string.url_all_users);
 
     // JSON Node names
     private static final String TAG_SUCCESS = "success";

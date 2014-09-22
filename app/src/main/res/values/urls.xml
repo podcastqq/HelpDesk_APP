@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="url_user_details">http://localhost/helpdesk/get_user_details.php</string>
+    <string name="url_update_user">http://localhost/helpdesk/update_user.php</string>
+    <string name="url_delete_user">http://localhost/helpdesk/delete_user.php</string>
+    <string name="url_create_user">http://localhost/helpdesk/create_user.php</string>
+    <string name="url_all_users">http://localhost/helpdesk/get_all_users.php</string>
+</resources>

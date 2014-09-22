@@ -42,13 +42,13 @@ public class EditUserActivity extends Activity{
     JSONParser jsonParser = new JSONParser();
 
     // single user details url
-    private static final String url_user_details = "http://localhost/helpdesk/get_user_details.php";
+    private final String url_user_details = getString(R.string.url_user_details);
 
     // url to update user
-    private static final String url_update_user = "http://localhost/helpdesk/update_user.php";
+    private final String url_update_user = getString(R.string.url_update_user);
 
     // url to delete user
-    private static final String url_delete_user = "http://localhost/helpdesk/delete_user.php";
+    private final String url_delete_user = getString(R.string.url_delete_user);
 
     // JSON Node names
     private static final String TAG_SUCCESS = "success";

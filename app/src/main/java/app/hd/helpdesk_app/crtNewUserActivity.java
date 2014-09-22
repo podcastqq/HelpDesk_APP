@@ -36,7 +36,7 @@ public class crtNewUserActivity extends Activity implements InformationalDialogF
     EditText inputRetypePass;
 
     // url to create new product
-    private static String url_create_user = "http://localhost/helpdesk/create_user.php";
+    private String url_create_user = getString(R.string.url_create_user);
 
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
