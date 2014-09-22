@@ -26,6 +26,7 @@ public class InformationalDialogFragment extends DialogFragment implements View.
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.info_dialog_frag, null);
         Ok = (Button) view.findViewById(R.id.ok);
+        Ok.setOnClickListener(this);
         setCancelable(false);
         return view;
     }

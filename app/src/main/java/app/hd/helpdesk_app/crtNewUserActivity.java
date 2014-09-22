@@ -36,7 +36,7 @@ public class crtNewUserActivity extends Activity implements InformationalDialogF
     EditText inputRetypePass;
 
     // url to create new product
-    private String url_create_user = getString(R.string.url_create_user);
+    private static String url_create_user = "http://10.0.2.2/helpdesk/create_user.php";
 
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
@@ -63,7 +63,7 @@ public class crtNewUserActivity extends Activity implements InformationalDialogF
             public void onClick(View view) {
                 // creating new product in background thread
 
-                if (inputPass.equals(inputRetypePass)) {
+                if (inputPass.getText().toString().equals(inputRetypePass.getText().toString())) {
                     new CreateNewUser().execute();
                 } else {
                         FragmentManager manager = getFragmentManager();
