@@ -1,7 +1,7 @@
 package app.hd.helpdesk_app;
 
 /**
- * Created by KMTPOFF on 2014-09-07.
+ * Created by Martynas Smilgevicius on 2014-09-07.
  */
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,7 +56,7 @@ public class AllUsersActivity extends ListActivity {
         // Hashmap for ListView
         usersList = new ArrayList<HashMap<String, String>>();
 
-        // Loading products in Background Thread
+        // Loading users in Background Thread
         new LoadAllUsers().execute();
 
         // Get listview
@@ -93,7 +93,7 @@ public class AllUsersActivity extends ListActivity {
         // if result code 100
         if (resultCode == 100) {
             // if result code 100 is received
-            // means user edited/deleted product
+            // means user edited/deleted user
             // reload this screen again
             Intent intent = getIntent();
             finish();
@@ -114,7 +114,7 @@ public class AllUsersActivity extends ListActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog = new ProgressDialog(AllUsersActivity.this);
-            pDialog.setMessage("@string/loading_users");
+            pDialog.setMessage(getString(R.string.loading_user_list));
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
             pDialog.show();
@@ -130,22 +130,22 @@ public class AllUsersActivity extends ListActivity {
             JSONObject json = jParser.makeHttpRequest(url_all_users, "GET", params);
 
             // Check your log cat for JSON reponse
-            Log.d("All Products: ", json.toString());
+            Log.d("All Users: ", json.toString());
 
             try {
                 // Checking for SUCCESS TAG
                 int success = json.getInt(TAG_SUCCESS);
 
                 if (success == 1) {
-                    // products found
+                    // users found
                     // Getting Array of Users
                     users = json.getJSONArray(TAG_USERS);
 
-                    // looping through All Products
+                    // looping through All Users
                     for (int i = 0; i < users.length(); i++) {
                         JSONObject c = users.getJSONObject(i);
 
-                        // Storing each json item in variable
+                        // Storing each json item (user data)in variable
                         String id = c.getString(TAG_PID);
                         String name = c.getString(TAG_NAME);
 
@@ -160,7 +160,7 @@ public class AllUsersActivity extends ListActivity {
                         usersList.add(map);
                     }
                 } else {
-                    // no products found
+                    // no users found
                     // Launch Add New product Activity
                     Intent i = new Intent(getApplicationContext(),
                             crtNewUserActivity.class);

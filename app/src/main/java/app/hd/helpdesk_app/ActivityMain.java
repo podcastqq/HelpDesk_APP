@@ -1,5 +1,9 @@
 package app.hd.helpdesk_app;
 
+/**
+ * Created by Martynas Smilgevicius on 2014-09-07.
+ */
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

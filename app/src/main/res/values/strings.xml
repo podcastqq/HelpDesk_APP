@@ -9,7 +9,10 @@
     <string name="edit_user">Edit user</string>
     <string name="view_all_users">View All Users</string>
     <string name="add_new_users">Add New Users</string>
-    <string name="loading_users">Loading user list. Please wait...</string>
+    <string name="loading_user_list">Loading user list. Please wait...</string>
+    <string name="loading_user_details">Loading user details. Please wait...</string>
+    <string name="updating_user_details">Updating user details. Please wait...</string>
+    <string name="deleting_user">User deleting. Please wait...</string>
     <string name="creating_user">Creating User</string>
     <string name="name">Name</string>
     <string name="surname">Surname</string>
@@ -19,6 +22,6 @@
     <string name="create_user">Create User</string>
     <string name="save_changes">Save Changes</string>
     <string name="delete_user">Delete User</string>
-    <string name="pass_not_match">Password didn't match</string>
+    <string name="pass_not_match">Password didn\'t match</string>
 
 </resources>

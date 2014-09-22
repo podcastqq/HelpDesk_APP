@@ -24,13 +24,13 @@
 
         <!-- Add Product Activity -->
         <activity
-            android:name=".NewUserActivity"
+            android:name=".crtNewUserActivity"
             android:label="@string/new_user" >
         </activity>
 
         <!-- Edit Product Activity -->
         <activity
-            android:name=".EditProductActivity"
+            android:name=".EditUserActivity"
             android:label="@string/edit_user" >
         </activity>
     </application>

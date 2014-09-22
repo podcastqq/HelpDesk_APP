@@ -1,7 +1,7 @@
 package app.hd.helpdesk_app;
 
 /**
- * Created by KMTPOFF on 2014-09-07.
+ * Created by Martynas Smilgevicius on 2014-09-07.
  */
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -20,8 +21,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-public class crtNewUserActivity extends Activity {
+public class crtNewUserActivity extends Activity implements InformationalDialogFragment.Communicator{
 
     // Progress Dialog
     private ProgressDialog pDialog;
@@ -64,10 +66,17 @@ public class crtNewUserActivity extends Activity {
                 if (inputPass.equals(inputRetypePass)) {
                     new CreateNewUser().execute();
                 } else {
-
+                        FragmentManager manager = getFragmentManager();
+                        InformationalDialogFragment OkDialog = new InformationalDialogFragment();
+                        OkDialog.show(manager, "OkDialog");
                     }
             }
         });
+    }
+
+    @Override
+    public void onDialogMessage(String message) {
+        //do smth when wrong pass alert dissmissed
     }
 
     /**
@@ -82,7 +91,7 @@ public class crtNewUserActivity extends Activity {
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog = new ProgressDialog(crtNewUserActivity.this);
-            pDialog.setMessage("@string/creating_user");
+            pDialog.setMessage(getString(R.string.creating_user));
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();
@@ -103,6 +112,7 @@ public class crtNewUserActivity extends Activity {
             params.add(new BasicNameValuePair("name", name));
             params.add(new BasicNameValuePair("surname", surname));
             params.add(new BasicNameValuePair("username", username));
+            params.add(new BasicNameValuePair("pass", pass));
 
             // getting JSON Object
             // Note that create product url accepts POST method
@@ -118,13 +128,14 @@ public class crtNewUserActivity extends Activity {
 
                 if (success == 1) {
                     // successfully created user
-                    Intent i = new Intent(getApplicationContext(), AllProductsActivity.class);
+                    Intent i = new Intent(getApplicationContext(), AllUsersActivity.class);
                     startActivity(i);
 
                     // closing this screen
                     finish();
                 } else {
                     // failed to create user
+                    Toast.makeText(getApplicationContext(), "Failed to create user", Toast.LENGTH_LONG).show();
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
