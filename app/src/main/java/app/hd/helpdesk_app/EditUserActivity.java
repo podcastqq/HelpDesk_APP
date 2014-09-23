@@ -57,7 +57,7 @@ public class EditUserActivity extends Activity{
     private static final String TAG_NAME = "name";
     private static final String TAG_SURNAME = "surname";
     private static final String TAG_USERNAME = "username";
-    private static final String TAG_PASSWORD = "password";
+    private static final String TAG_PASSWORD = "pass";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

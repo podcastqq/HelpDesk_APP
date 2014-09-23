@@ -119,7 +119,7 @@ public class crtNewUserActivity extends Activity implements InformationalDialogF
             JSONObject json = jsonParser.makeHttpRequest(url_create_user,
                     "POST", params);
 
-            // check log cat fro response
+            // check log cat for response
             Log.d("Create Response", json.toString());
 
             // check for success tag
