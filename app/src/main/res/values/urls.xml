@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="url_user_details">http://10.0.2.2/helpdesk/get_user_details.php</string>
-    <string name="url_update_user">http://10.0.2.2/helpdesk/update_user.php</string>
-    <string name="url_delete_user">http://10.0.2.2/helpdesk/delete_user.php</string>
-    <string name="url_create_user">http://10.0.2.2/helpdesk/create_user.php</string>
-    <string name="url_all_users">http://10.0.2.2/helpdesk/get_all_users.php</string>
+    <string name="url_user_details">http://192.168.1.120/helpdesk/get_user_details.php</string>
+    <string name="url_update_user">http://192.168.1.120/helpdesk/update_user.php</string>
+    <string name="url_delete_user">http://192.168.1.120/helpdesk/delete_user.php</string>
+    <string name="url_create_user">http://192.168.1.120/helpdesk/create_user.php</string>
+    <string name="url_all_users">http://192.168.1.120/helpdesk/get_all_users.php</string>
+
+
+    <!--IP for testing with emulator-->
+    <!--<string name="url_user_details">http://10.0.0.2/helpdesk/get_user_details.php</string>-->
+    <!--<string name="url_update_user">http://10.0.0.2/helpdesk/update_user.php</string>-->
+    <!--<string name="url_delete_user">http://10.0.0.2/helpdesk/delete_user.php</string>-->
+    <!--<string name="url_create_user">http://10.0.0.2/helpdesk/create_user.php</string>-->
+    <!--<string name="url_all_users">http://10.0.0.2/helpdesk/get_all_users.php</string>-->
 </resources>

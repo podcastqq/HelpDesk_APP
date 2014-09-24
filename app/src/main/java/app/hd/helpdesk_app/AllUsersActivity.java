@@ -163,7 +163,7 @@ public class AllUsersActivity extends ListActivity {
                     // no users found
                     // Launch Add New product Activity
                     Intent i = new Intent(getApplicationContext(),
-                            crtNewUserActivity.class);
+                            crtNewUserFragment.class);
                     // Closing all previous activities
                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(i);

@@ -12,18 +12,21 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class crtNewUserActivity extends Activity implements InformationalDialogFragment.Communicator{
+public class crtNewUserFragment extends Fragment implements InformationalDialogFragment.Communicator{
 
     // Progress Dialog
     private ProgressDialog pDialog;
@@ -34,27 +37,31 @@ public class crtNewUserActivity extends Activity implements InformationalDialogF
     EditText inputUsername;
     EditText inputPass;
     EditText inputRetypePass;
+    String url_create_user;
 
-    // url to create new product
-    private static String url_create_user = "http://10.0.2.2/helpdesk/create_user.php";
-
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        // url to create new product
+         url_create_user = getString(R.string.url_create_user);
+    }
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_user);
+    public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        View rootView = inflater.inflate(R.layout.add_user_fragment, container, false);
 
         // Edit Text
-        inputName = (EditText) findViewById(R.id.inputName);
-        inputSurname = (EditText) findViewById(R.id.inputSurname);
-        inputUsername = (EditText) findViewById(R.id.inputUsername);
-        inputPass = (EditText) findViewById(R.id.inputPass);
-        inputRetypePass = (EditText) findViewById(R.id.inputRetypePass);
+        inputName = (EditText) rootView.findViewById(R.id.inputName);
+        inputSurname = (EditText) rootView.findViewById(R.id.inputSurname);
+        inputUsername = (EditText) rootView.findViewById(R.id.inputUsername);
+        inputPass = (EditText) rootView.findViewById(R.id.inputPass);
+        inputRetypePass = (EditText) rootView.findViewById(R.id.inputRetypePass);
 
         // Create button
-        Button btnCreateUser = (Button) findViewById(R.id.btnCreateUser);
+        Button btnCreateUser = (Button) rootView.findViewById(R.id.btnCreateUser);
 
         // button click event
         btnCreateUser.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +79,7 @@ public class crtNewUserActivity extends Activity implements InformationalDialogF
                     }
             }
         });
+        return rootView;
     }
 
     @Override
@@ -90,7 +98,7 @@ public class crtNewUserActivity extends Activity implements InformationalDialogF
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(crtNewUserActivity.this);
+            pDialog = new ProgressDialog(getActivity());
             pDialog.setMessage(getString(R.string.creating_user));
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
@@ -105,7 +113,6 @@ public class crtNewUserActivity extends Activity implements InformationalDialogF
             String surname = inputSurname.getText().toString();
             String username = inputUsername.getText().toString();
             String pass = inputPass.getText().toString();
-            String retypePass = inputRetypePass.getText().toString();
 
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -123,23 +130,23 @@ public class crtNewUserActivity extends Activity implements InformationalDialogF
             Log.d("Create Response", json.toString());
 
             // check for success tag
-            try {
-                int success = json.getInt(TAG_SUCCESS);
-
-                if (success == 1) {
-                    // successfully created user
-                    Intent i = new Intent(getApplicationContext(), AllUsersActivity.class);
-                    startActivity(i);
-
-                    // closing this screen
-                    finish();
-                } else {
-                    // failed to create user
-                    Toast.makeText(getApplicationContext(), "Failed to create user", Toast.LENGTH_LONG).show();
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                int success = json.getInt(TAG_SUCCESS);
+//
+//                if (success == 1) {
+//                    // successfully created user
+//                    Intent i = new Intent(getApplicationContext(), AllUsersActivity.class);
+//                    startActivity(i);
+//
+//                    // closing this screen
+//                    finish();
+//                } else {
+//                    // failed to create user
+//                    Toast.makeText(getApplicationContext(), "Failed to create user", Toast.LENGTH_LONG).show();
+//                }
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
 
             return null;
         }
